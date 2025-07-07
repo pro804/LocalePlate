@@ -7,6 +7,10 @@ import { LocationContext } from '../../../services/location/location.context';
 
 export const SearchContainer = styled.View`
     padding: ${(props) => props.theme.space[3]};
+    position: absolute;
+    z-index: 999;
+    top: 40px;
+    width: 100%;
 `;
 
 const StyledSearchbar = styled(Searchbar).attrs(({ theme }) => ({
@@ -35,6 +39,7 @@ export const Search = () => {
         <SearchContainer>
             <ShadowWrapper size="medium" style={{ borderRadius: 8 }}>
                 <StyledSearchbar
+                    icon="map-search"
                     placeholder="Search for a location"
                     value={searchKeyword}
                     onChangeText={(text) => setSearchKeyword(text)}
