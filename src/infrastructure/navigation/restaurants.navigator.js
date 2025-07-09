@@ -30,7 +30,7 @@ export const RestaurantsNavigator = () => {
                     presentation: 'modal',
                     gestureDirection: 'vertical',
                     gestureEnabled: true,
-                    statubarEnabled: false,
+                    statusBarEnabled: false,
                 }}
             />
         </RestaurantsStack.Navigator>

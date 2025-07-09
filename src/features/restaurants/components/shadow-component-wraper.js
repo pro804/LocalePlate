@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { useTheme } from 'styled-components/native';
-import { Proptype } from 'prop-types';
+import PropTypes from 'prop-types';
 
 export const ShadowWrapper = ({ children, size = 'small', style }) => {
     const theme = useTheme();
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
 });
 
 ShadowWrapper.propTypes = {
-    children: Proptype.node,
-    size: Proptype.string,
-    style: Proptype.object,
+    children: PropTypes.node,
+    size: PropTypes.string,
+    style: PropTypes.object,
 };
