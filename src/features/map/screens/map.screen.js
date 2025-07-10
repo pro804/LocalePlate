@@ -8,6 +8,7 @@ import { RestaurantsContext } from '../../../services/restaurants/restaurants.co
 
 import { Search } from '../components/search.component';
 import { MapCallout } from '../components/map-callout.component';
+import { View } from 'react-native';
 
 const Map = styled(MapView)`
     height: 100%;
@@ -45,12 +46,14 @@ export const MapScreen = ({ navigation }) => {
                         <Marker
                             key={restaurant.name}
                             title={restaurant.name}
+                            identifier={restaurant.name}
                             coordinate={{
                                 latitude: restaurant.geometry.location.lat,
                                 longitude: restaurant.geometry.location.lng,
                             }}
                         >
                             <Callout
+                                key={restaurant.name}
                                 onPress={() =>
                                     navigation.navigate('Restaurants', {
                                         screen: 'RestaurantDetail',

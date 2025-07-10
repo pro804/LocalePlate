@@ -22,8 +22,9 @@ const error = (theme) => `
 `;
 
 const caption = (theme) => `
-    font-size: ${theme.fontSizes.caption};
-    font-weight: ${theme.fontWeights.bold};
+  font-family: ${theme.fonts.monospace};
+  font-size: ${theme.fontSizes.caption};
+  font-weight: ${theme.fontWeights.medium}; 
 `;
 
 const label = (theme) => `
@@ -42,11 +43,9 @@ const variants = {
 
 export const Text = styled.Text`
     ${({ theme }) => defaultTextStyles(theme)}
-    ${({ variant, theme }) => {
-        const variantStyle = variants[variant] || variants.body;
-        return variantStyle(theme);
-    }}
+    ${({ variant, theme }) => variants[variant](theme)}
 `;
+
 Text.defaultProps = {
     variant: 'body',
 };

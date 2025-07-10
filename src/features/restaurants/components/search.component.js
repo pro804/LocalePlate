@@ -23,7 +23,7 @@ const StyledSearchbar = styled(Searchbar).attrs(({ theme }) => ({
     border-color: ${({ theme }) => theme.colors.ui.secondary};
 `;
 
-export const Search = () => {
+export const Search = ({ isFavouritesToggled, onFavouritesToggle }) => {
     const { keyword, search } = useContext(LocationContext);
     const [searchKeyword, setSearchKeyword] = useState(keyword);
 
@@ -35,6 +35,8 @@ export const Search = () => {
         <SearchContainer>
             <ShadowWrapper size="medium" style={{ borderRadius: 8 }}>
                 <StyledSearchbar
+                    icon={isFavouritesToggled ? 'heart' : 'heart-outline'}
+                    onIconPress={onFavouritesToggle}
                     placeholder="Search for a location"
                     value={searchKeyword}
                     onChangeText={(text) => setSearchKeyword(text)}
