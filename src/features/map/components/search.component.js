@@ -22,7 +22,7 @@ const StyledSearchbar = styled(Searchbar).attrs(({ theme }) => ({
 }))`
     background-color: ${({ theme }) => theme.colors.ui.quaternary};
     border-radius: ${({ theme }) => theme.sizes[0]};
-    border-width: 0.5px;
+    border-width: 0.2px;
     border-radius: 4px;
     border-color: ${({ theme }) => theme.colors.ui.secondary};
 `;

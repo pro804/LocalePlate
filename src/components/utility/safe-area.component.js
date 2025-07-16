@@ -1,7 +1,30 @@
-import { StatusBar, SafeAreaView } from 'react-native';
+import React from 'react';
+import { StatusBar as RNStatusBar, SafeAreaView, Platform } from 'react-native';
 import styled from 'styled-components/native';
+import { useTheme } from 'styled-components/native';
 
-export const SafeArea = styled(SafeAreaView)`
+const StyledSafeArea = styled(SafeAreaView)`
     flex: 1;
-    ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`};
+    background-color: ${(props) => props.theme.colors.bg.primary};
+
+    ${Platform.OS === 'android' &&
+    RNStatusBar.currentHeight &&
+    `
+    padding-top: ${RNStatusBar.currentHeight}px;
+  `}
 `;
+
+export const SafeArea = ({ children }) => {
+    const theme = useTheme();
+
+    return (
+        <>
+            <RNStatusBar
+                backgroundColor="transparent"
+                translucent={true}
+                barStyle={theme.colors.statusBarStyle || 'dark-content'}
+            />
+            <StyledSafeArea>{children}</StyledSafeArea>
+        </>
+    );
+};
