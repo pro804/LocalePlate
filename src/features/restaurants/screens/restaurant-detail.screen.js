@@ -16,7 +16,7 @@ export const RestaurantDetailScreen = ({ route }) => {
     const { restaurant } = route.params;
     return (
         <SafeArea>
-            <Spacer position="top" size="small">
+            <Spacer position="top" size="large">
                 <RestaurantInfoCard restaurant={restaurant} />
             </Spacer>
             <ScrollView>

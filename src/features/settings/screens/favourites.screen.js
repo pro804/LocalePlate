@@ -5,6 +5,7 @@ import { TouchableOpacity } from 'react-native';
 
 import { FavouritesContext } from '../../../services/favourites/favourites.context';
 
+import { FadeInView } from '../../../components/animations/fade.animation';
 import { SafeAreaView } from 'react-native';
 import { Text } from '../../../components/typography/text.component';
 import { Spacer } from '../../../components/spacer/spacer.component';
@@ -34,13 +35,15 @@ export const FavouritesScreen = ({ navigation }) => {
                     return (
                         <TouchableOpacity
                             onPress={() =>
-                                navigation.navigate('RestaurantDetail', {
+                                navigation.navigate('FavouritesDetail', {
                                     restaurant: item,
                                 })
                             }
                         >
                             <Spacer position="bottom" size="large">
-                                <RestaurantInfoCard restaurant={item} />
+                                <FadeInView>
+                                    <RestaurantInfoCard restaurant={item} />
+                                </FadeInView>
                             </Spacer>
                         </TouchableOpacity>
                     );

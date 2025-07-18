@@ -8,7 +8,6 @@ import { RestaurantsContext } from '../../../services/restaurants/restaurants.co
 
 import { Search } from '../components/search.component';
 import { MapCallout } from '../components/map-callout.component';
-import { View } from 'react-native';
 
 const Map = styled(MapView)`
     height: 100%;
