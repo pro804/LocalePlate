@@ -3,6 +3,7 @@ import React from 'react';
 import {
     createStackNavigator,
     TransitionPresets,
+    CardStyleInterpolators,
 } from '@react-navigation/stack';
 
 import { RestaurantsScreen } from '../../features/restaurants/screens/restaurants.screen';
@@ -31,6 +32,8 @@ export const RestaurantsNavigator = () => {
                     gestureDirection: 'vertical',
                     gestureEnabled: true,
                     statusBarEnabled: false,
+                    cardStyleInterpolator:
+                        CardStyleInterpolators.forVerticalIOS,
                 }}
             />
         </RestaurantsStack.Navigator>

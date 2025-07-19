@@ -9,6 +9,7 @@ import {
 import { SettingsScreen } from '../../features/settings/screens/settings.screen';
 import { FavouritesScreen } from '../../features/settings/screens/favourites.screen';
 import { RestaurantDetailScreen } from '../../features/restaurants/screens/restaurant-detail.screen';
+import { CameraScreen } from '../../features/settings/screens/camera.screen';
 
 const SettingsStack = createStackNavigator();
 
@@ -32,6 +33,7 @@ export const SettingsNavigator = ({ route, navigation }) => {
                 options={{
                     title: 'Favourites',
                     headerBackButtonDisplayMode: 'generic',
+                    headerBackTitleStyle: { color: 'blue' },
                 }}
             />
             <SettingsStack.Screen
@@ -44,6 +46,17 @@ export const SettingsNavigator = ({ route, navigation }) => {
                     gestureDirection: 'vertical',
                     gestureEnabled: true,
                     statusBarEnabled: false,
+                    cardStyleInterpolator:
+                        CardStyleInterpolators.forVerticalIOS,
+                }}
+            />
+            <SettingsStack.Screen
+                name="Camera"
+                component={CameraScreen}
+                options={{
+                    title: 'Camera',
+                    headerBackButtonDisplayMode: 'generic',
+                    headerBackTitleStyle: { color: 'blue' },
                 }}
             />
         </SettingsStack.Navigator>
